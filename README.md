@@ -143,16 +143,8 @@ The exact order can vary because the Producer and Consumer are running concurren
 
 During execution, a Matplotlib window displays the three matrices:
 
-```text
-┌─────────────┐  ┌─────────────┐  ┌─────────────────┐
-│   Matrix A  │  │   Matrix B  │  │  Matrix C=A×B  │
-│             │  │             │  │                 │
-│   100 × 100 │  │   100 × 100 │  │    100 × 100    │
-└─────────────┘  └─────────────┘  └─────────────────┘
-
-        Processing row 45 / 100   column 72 / 100
-        Progress: 45.8%
-```
+![Matrix Output](Animation.png)
+![Matrix Output](Animation_complete.png)
 
 Matrix C is gradually filled while the threads perform the calculations. A progress bar at the bottom of the window shows how many of the 10,000 elements have been completed.
 
