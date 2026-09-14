@@ -158,10 +158,7 @@ Matrix C is gradually filled while the threads perform the calculations. A progr
 
 After the calculation finishes, the terminal displays information similar to:
 
-```text
 ![Matrix Output](Matrix_output.png)
-
-```
 
 The values in the **5 × 5 output will be different on each run** because Matrix A and Matrix B are randomly generated.
 
