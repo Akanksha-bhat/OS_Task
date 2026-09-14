@@ -159,7 +159,7 @@ Matrix C is gradually filled while the threads perform the calculations. A progr
 After the calculation finishes, the terminal displays information similar to:
 
 ```text
-<img width="217" height="690" alt="Screenshot 2026-07-17 031124" src="https://github.com/user-attachments/assets/a976394d-4f9c-40b3-85f2-269d2ab1076a" />
+![Matrix Output](Matrix_output.png)
 
 ```
 
