@@ -37,11 +37,11 @@ The second program performs **100 × 100 matrix multiplication using Python thre
 ```text
 OS-Task-1/
 │
-├── ProducerConsumer.java
+├── Producer_Consumer.java
 │
-├── matrix_multiplication.py
-├── animation.py
-├── main.py
+├── Matrix_Multiplication.py
+├── Animation.py
+├── Matrix_main.py
 │
 └── README.md
 ```
