@@ -8,52 +8,38 @@ import matrix_multiplication
 import animation
 
 
-# Start multiplication
-calculation_thread = matrix_multiplication.start_multiplication()
+thread = matrix_multiplication.start_multiplication()
 
-
-# Show live animation
 animation.show_animation(matrix_multiplication)
 
-
-# Wait for all threads
-calculation_thread.join()
+thread.join()
 
 
-# Get matrices
 A = matrix_multiplication.A
 B = matrix_multiplication.B
 C = matrix_multiplication.C
-
-SIZE = matrix_multiplication.SIZE
-
-
-# TensorFlow verification
-tensorflow_A = tf.constant(A)
-tensorflow_B = tf.constant(B)
-
-tensorflow_result = tf.matmul(
-    tensorflow_A,
-    tensorflow_B
-).numpy()
+size = matrix_multiplication.SIZE
 
 
-# Calculate difference
-difference = np.max(
-    np.abs(C - tensorflow_result)
-)
+tf_A = tf.constant(A)
+tf_B = tf.constant(B)
+
+tf_result = tf.matmul(tf_A, tf_B).numpy()
+
+
+difference = np.max(np.abs(C - tf_result))
 
 
 print()
 print("==============================================")
-print("       MATRIX MULTIPLICATION RESULTS")
+print("          MATRIX MULTIPLICATION RESULTS")
 print("==============================================")
 
-print(f"Matrix A size       : {SIZE} x {SIZE}")
-print(f"Matrix B size       : {SIZE} x {SIZE}")
-print(f"Matrix C size       : {SIZE} x {SIZE}")
-print(f"Threads used        : {SIZE * SIZE}")
-print(f"Operations completed: {SIZE * SIZE:,}")
+print(f"Matrix A size        : {size} x {size}")
+print(f"Matrix B size        : {size} x {size}")
+print(f"Matrix C size        : {size} x {size}")
+print(f"Threads used         : {size * size}")
+print(f"Operations completed : {size * size:,}")
 
 print()
 print("First 5 x 5 elements of Matrix C:")
@@ -71,12 +57,7 @@ print(
 print()
 print("Maximum difference from TensorFlow:", difference)
 
-if np.allclose(
-    C,
-    tensorflow_result,
-    rtol=1e-3,
-    atol=1e-1
-):
+if np.allclose(C, tf_result, rtol=1e-3, atol=1e-1):
     print("Result verified successfully using TensorFlow.")
 else:
     print("Result verification failed.")
